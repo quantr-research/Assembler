@@ -42,7 +42,13 @@
 					</execution>
 				</executions>
 				<configuration>
-					<sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+					<sourceDirectory>${basedir}/src/main/java/hk/quantr/assembler/antlr</sourceDirectory>
+					<outputDirectory>${project.build.directory}/generated-sources/antlr4/hk/quantr/assembler/antlr</outputDirectory>
+					<arguments>
+						<argument>-package</argument>
+						<argument>hk.quantr.assembler.antlr</argument>
+					</arguments>
+					<listener>true</listener>
 				</configuration>
 			</plugin>
 		</plugins>
