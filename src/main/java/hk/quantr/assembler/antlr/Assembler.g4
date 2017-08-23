@@ -7,8 +7,7 @@ assemble	: statements
 			| EOF
 			;
 
-statements	:	(statement NL)+
-			|	statement
+statements	:	(statement NL+)*
 			;
 
 statement	:	ID;
