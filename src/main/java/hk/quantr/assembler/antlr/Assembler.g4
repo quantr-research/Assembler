@@ -2,17 +2,15 @@ grammar Assembler;
 
 NUMBER				:	'0x'? [0-9]+;
 STRING				:	'"' ~["]* '"';
+REG					:	'edx';
 
 LINE_COMMENT		:	';' ~[\r\n]*;
 
 SECTION_NAME		:	'.' [a-zA-Z] [a-zA-Z0-9]+;
-LABEL_NAME			:	[a-zA-Z] [a-zA-Z0-9]+;
-FUNCTION_NAME		:	[a-zA-Z] [a-zA-Z0-9]+;
+IDENTIFIER			:	[a-zA-Z] [a-zA-Z0-9]+;
 
 LABEL_POSTFIX		:	'equ' ~[;]*;
 
-OPERANDS			:	[a-zA-Z0-9,]+;
-MISSING_STATEMENT	:	[a-zA-Z0-9]+;
 
 WS					:	[ \t]+;
 NL					:	'\r'? '\n';
@@ -44,15 +42,15 @@ marco		:	'SECTION' WS SECTION_NAME
 			|	label
 			;
 
-label		:	WS? LABEL_NAME ':' WS? LABEL_POSTFIX?
+label		:	WS? IDENTIFIER ':' WS? LABEL_POSTFIX?
 			;
 
-code		:	'mov' WS OPERANDS
-			|	'int' WS NUMBER
+code		:	'mov' WS REG ',' REG
+			|	'int' WS REG ',' REG
 			;
 
-data		:	'db' WS ',' NUMBER
+data		:	'db' WS STRING ',' NUMBER
 			;
 
-function	:	'global' WS FUNCTION_NAME
+function	:	'global' WS IDENTIFIER
 			;
