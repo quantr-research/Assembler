@@ -10,7 +10,7 @@ public class TestAssembler {
 
 	@Test
 	public void test() throws Exception {
-		AssemblerLexer lexer = new AssemblerLexer(CharStreams.fromStream(getClass().getResourceAsStream("4.asm")));
+		AssemblerLexer lexer = new AssemblerLexer(CharStreams.fromStream(getClass().getResourceAsStream("3.asm")));
 
 		CommonTokenStream tokenStream = new CommonTokenStream(lexer);
 		AssemblerParser parser = new AssemblerParser(tokenStream);

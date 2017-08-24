@@ -2,7 +2,7 @@ grammar Assembler;
 
 NUMBER				:	'0x'? [0-9]+;
 STRING				:	'"' ~["]* '"';
-REG					:	'edx';
+REG					:	'eax'|'ebx'|'ecx'|'edx';
 
 LINE_COMMENT		:	';' ~[\r\n]*;
 SECTION_NAME		:	'.' [a-zA-Z] [a-zA-Z0-9]+;
@@ -45,7 +45,8 @@ label		:	WS? IDENTIFIER ':' WS? LABEL_POSTFIX?
 			;
 
 code		:	'mov' WS REG ',' REG
-			|	'int' WS REG ',' REG
+			|	'mov' WS REG ',' NUMBER
+			|	'int' WS NUMBER
 			;
 
 data		:	'db' WS STRING ',' NUMBER
