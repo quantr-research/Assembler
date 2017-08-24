@@ -45,6 +45,7 @@ label		:	WS? IDENTIFIER ':' WS? LABEL_POSTFIX?
 			;
 
 code		:	'mov' WS REG ',' REG
+			|	'mov' WS REG ',' IDENTIFIER
 			|	'mov' WS REG ',' NUMBER
 			|	'int' WS NUMBER
 			;
