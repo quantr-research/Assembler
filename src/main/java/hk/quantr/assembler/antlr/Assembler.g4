@@ -1,19 +1,17 @@
 grammar Assembler;
 
-NUMBER				:	'0x'? [0-9]+;
-STRING				:	'"' ~["]* '"';
-REG					:	'eax'|'ebx'|'ecx'|'edx';
+WS		:	[ \t]+;
+NL		:	'\r'? '\n';
+NUMBER		:	'0x'? [0-9]+;
+STRING		:	'"' ~["]* '"';
+REG		:	'eax'|'ebx'|'ecx'|'edx';
 
-LINE_COMMENT		:	';' ~[\r\n]*;
-SECTION_NAME		:	'.' [a-zA-Z] [a-zA-Z0-9]+;
-IDENTIFIER			:	[a-zA-Z] [a-zA-Z0-9]+;
+LINE_COMMENT	:	';' ~[\r\n]*;
+SECTION_NAME	:	'.' [a-zA-Z] [a-zA-Z0-9]+;
 
-LABEL_POSTFIX		:	'equ' ~[;]*;
+LABEL_POSTFIX	:	'equ' ~[;]*;
 
-
-WS					:	[ \t]+;
-NL					:	'\r'? '\n';
-
+IDENTIFIER	:	[a-zA-Z] [a-zA-Z0-9]+;
 
 assemble	:	lines
 			|	EOF

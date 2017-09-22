@@ -11,15 +11,16 @@ import org.antlr.v4.runtime.tree.ErrorNode;
  */
 public class MyAssemblerListener extends AssemblerBaseListener {
 
-//	@Override
-//	public void enterEveryRule(ParserRuleContext ctx) {
-//		System.out.println("\t\t\tenterEveryRule = >" + ctx.getText() + "<");
-//	}
+	@Override
+	public void enterEveryRule(ParserRuleContext ctx) {
+		System.out.println("\t\t\tenterEveryRule = >" + ctx.getText() + "<");
+	}
 //
 //	@Override
 //	public void visitTerminal(TerminalNode node) {
 //		System.out.println("visitTerminal = >" + node.getText() + "<");
 //	}
+
 	@Override
 	public void visitErrorNode(ErrorNode node) {
 		System.out.println("\t\t\tvisitErrorNode = >" + node.getText() + "<");
