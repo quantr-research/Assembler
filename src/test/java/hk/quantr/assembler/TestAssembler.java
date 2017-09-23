@@ -15,6 +15,7 @@ public class TestAssembler {
 		CommonTokenStream tokenStream = new CommonTokenStream(lexer);
 		AssemblerParser parser = new AssemblerParser(tokenStream);
 		parser.addErrorListener(new MyErrorListener());
+		parser.addParseListener(new GeneralParserListener());
 		AssemblerParser.AssembleContext context = parser.assemble();
 		
 		ParseTreeWalker walker = new ParseTreeWalker();
