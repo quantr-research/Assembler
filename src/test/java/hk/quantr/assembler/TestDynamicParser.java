@@ -51,7 +51,7 @@ public class TestDynamicParser {
 			System.out.println(context.toStringTree(parser));
 
 			ParseTreeWalker walker = new ParseTreeWalker();
-			GeneralParserListener listener = new GeneralParserListener();
+			GeneralParserListener listener = new GeneralParserListener(parser);
 			walker.walk(listener, context);
 		}
 	}
