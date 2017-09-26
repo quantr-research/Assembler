@@ -26,23 +26,23 @@ public class MyAssemblerListener extends AssemblerBaseListener {
 		System.out.println("\t\t\tvisitErrorNode = >" + node.getText() + "<");
 	}
 
-	@Override
-	public void enterStatement(AssemblerParser.StatementContext ctx) {
-		System.out.println("enterStatement = " + ctx.getText());
-	}
+//	@Override
+//	public void enterStatement(AssemblerParser.StatementContext ctx) {
+//		System.out.println("enterStatement = " + ctx.getText());
+//	}
+//
+//	@Override
+//	public void enterComment(AssemblerParser.CommentContext ctx) {
+//		System.out.println("enterComments = " + ctx.getText());
+//	}
 
-	@Override
-	public void enterComment(AssemblerParser.CommentContext ctx) {
-		System.out.println("enterComments = " + ctx.getText());
-	}
-
-	@Override
-	public void enterData(AssemblerParser.DataContext ctx) {
+//	@Override
+//	public void enterData(AssemblerParser.DataContext ctx) {
 //		System.out.println("enterData  a1 = " + ctx.a1);
 //		System.out.println("enterData  a2 = " + ctx.a2);
 //		System.out.println("enterData  a3 = " + ctx.a3);
 //		System.out.println("enterData  a4 = " + ctx.a4);
 //		System.out.println("enterData  a5 = " + ctx.a5);
-		System.out.println("enterData = " + ctx.getText());
-	}
+//		System.out.println("enterData = " + ctx.getText());
+//	}
 }
