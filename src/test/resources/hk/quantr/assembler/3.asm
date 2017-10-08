@@ -23,4 +23,4 @@ main:				; standard  gcc  entry point
 	mov	ebx,0		; exit code, 0=normal
 	mov	eax,1		; exit command to kernel
 	int	0x80		; interrupt 80 hex, call kernel
-   
+
