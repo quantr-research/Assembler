@@ -3,7 +3,7 @@ grammar Assembler;
 WS		:	[ \t]+;
 NL		:	'\r'? '\n';
 NUMBER		:	'0x'? [0-9]+;
-STRING		:	'"' ~["]* '"';
+STRING		:	'"' ~["]* '"'; 
 REG		:	'eax'|'ebx'|'ecx'|'edx';
 
 LINE_COMMENT	:	';' ~[\r\n]*;
@@ -47,7 +47,7 @@ code		:	'mov' WS REG ',' REG
 			|	'mov' WS REG ',' NUMBER
 			|	'int' WS NUMBER
 			;
-
+ 
 data		:	'db' WS STRING ',' NUMBER
 			;
 
